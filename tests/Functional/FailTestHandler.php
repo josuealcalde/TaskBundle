@@ -21,7 +21,7 @@ class FailTestHandler implements TaskHandlerInterface
     /**
      * {@inheritdoc}
      */
-    public function handle($workload)
+    public function handle($workload, $execution = null)
     {
         throw new \Exception();
     }
