@@ -70,7 +70,7 @@ class ExecuteCommand extends Command
         $handler = $this->handlerFactory->create($execution->getHandlerClass());
 
         try {
-            $result = $handler->handle($execution->getWorkload());
+            $result = $handler->handle($execution->getWorkload(), $execution);
         } catch (\Exception $exception) {
             if ($exception instanceof FailedException) {
                 $errorOutput->writeln(FailedException::class);

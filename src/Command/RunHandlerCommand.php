@@ -67,7 +67,7 @@ EOT
             $output->writeln(sprintf('Run command "%s" with workload "%s"', $handlerClass, $workload));
         }
 
-        $result = $this->handlerFactory->create($handlerClass)->handle($workload);
+        $result = $this->handlerFactory->create($handlerClass)->handle($workload, null);
 
         if ($output->getVerbosity() >= OutputInterface::VERBOSITY_VERBOSE) {
             $output->writeln(sprintf('Result: %s', json_encode($result)));
